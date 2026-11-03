@@ -3,6 +3,8 @@
 Platforma dedykowana społeczności rolkowej (slalom, freeride, aggressive), integrująca zaawansowany słownik trików, mapę miejscówek (SpotFinder) 
 oraz narzędzia dla instruktorów do zarządzania grupami i postępami swoich uczniów.
 
+Figma: https://www.figma.com/design/Hf7OO8Re52mjl6vnih2vwg/BladeCrew?node-id=0-1&t=ZeGWKnbSlBlZe9w1-1
+
 ## 1. Funkcje
 Aplikacja rozwiązuje problem braku jednego, spójnego ekosystemu dla rolkarzy. Zamiast korzystać z wielu rozproszonych narzędzi, RollerDex oferuje:
 
