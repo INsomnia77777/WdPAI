@@ -1,17 +1,25 @@
 <?php
-
 declare(strict_types=1);
 
-$message = "Hi There! Let's start!";
-?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My first Docker app</title>
-</head>
-<body>
-    <h1><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?></h1>
-</body>
-</html>
+use App\Controller\DefaultController;
+use App\Controller\TrickController;
+use App\Routing;
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+$routing = new Routing();
+
+$routing->get('/', DefaultController::class, 'index');
+$routing->get('/tricks', TrickController::class, 'index');
+$routing->get('/tricks/{id}', TrickController::class, 'show');
+$routing->get('/spotfinder', DefaultController::class, 'spotfinder');
+$routing->get('/groups', DefaultController::class, 'groups');
+
+$routeFound = $routing->dispatch(
+    $_SERVER['REQUEST_METHOD'],
+    $_SERVER['REQUEST_URI']
+);
+
+if (!$routeFound) {
+    (new DefaultController())->notFound();
+}
